@@ -1,0 +1,62 @@
+html{
+  background-color: #000;
+
+}
+
+
+h1{
+  color: #E7F0FF;
+  margin: 100px auto;
+  width: 300px;
+}
+
+h2{
+  width: 100px;
+  margin: 20px auto;
+  color: #E7F0FF;
+
+}
+
+input{
+  margin-left: 15%;
+  width: 200px;
+}
+
+#ingredientSubmit{
+  margin-left: 10px;
+}
+
+.fridgeStuff{
+  padding: 100px;
+  margin: 50px auto;
+  width: 400px;
+  background-color: lightblue;
+  border-radius: 10px;
+}
+
+#fridgeItems{
+  margin-left: 20px;
+}
+
+
+#findRecipes{
+  margin-left: 25%;
+}
+
+li{
+  list-style-type: none;
+  border: blue solid 2px;
+  text-align: center;
+  width: 260px;
+}
+
+
+.recipes{
+  text-align: center;
+  margin: 10px auto;
+  width: 600px;
+  background-color: lightblue;
+  height: 200px;
+  border-radius: 10px;
+
+}
