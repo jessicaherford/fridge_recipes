@@ -8,6 +8,9 @@ $(document).ready(function(){
     $('#fridgeIngredients').val('');
   })
 
+  $('#clearResults').click(function(){
+      $('p').remove();
+  })
   // var ingredientsId = ('#fridgeItems').length
   // console.log(ingredientsId);
   // for(var i = 0; i<ingredientsId; i++){
@@ -36,12 +39,6 @@ $(document).ready(function(){
       $('li').remove();
   })
 
-  // $('li').mouseenter(function(){
-  //   $(this).css('background-color', 'white');
-  // })
-
-
-
   var call = $.ajax({
         url: "http://food2fork.com/api/search?key=c24b2377e69e34d6b450d0b43e35c9e0",
         method: "GET",
@@ -50,24 +47,48 @@ $(document).ready(function(){
 
 
 call.done(function(response){
-  console.log(response)
+  //console.log(response)
   //response is an object
   var recipes = response.recipes[0].title;
+  var recipesArray = [];
   for(i=0; i<response.recipes.length; i++){
     var recipes = response.recipes[i].title;
-    console.log(recipes);
-    //recipes is a string
-    // if(recipes.innerHTML === 'Banana'){
-    //   $('#results').append('<p>' +recipes+ '</p>');
-    //   console.log(recipes);
-    // }
-    $('#results').append('<p>' +recipes+ '</p>');
+    //console.log(recipes);
+    recipesArray.push(recipes);
+    //$('#results').append('<p>' +recipes+ '</p>');
+  }
+  //console.log(recipesArray);
+
+  // for(i=0;i<recipesArray.length; i++){
+  //   if("recipesArray[i]:contains('Bacon')"){
+  //     $('#results').append('<p>' +recipesArray[i]+ '</p>');
+  //   }
+  // }
+
+  //added from fridgeItemsHolder() need to put inside
+  var fooItems = document.getElementById('fridgeItems');
+  var fooListItems = fooItems.getElementsByTagName('li');
+
+  var fridgeListItems = [];
+
+  for(var i = 0 ; i<fooListItems.length; i++){
+    fridgeListItems.push(fooListItems[i].innerHTML);
+  }
+  console.log(fridgeListItems);
+  console.log(recipesArray);
+  for(i=0; i<recipesArray.length; i++){
+  if(recipesArray[i].includes(fridgeListItems)){
+    $('#results').append('<p>' +recipesArray[i]+ '</p>');
+  }
+  //return recipesArray;
+
   }
 
-  })
+//Have
 
 
 //grabs list element by name
+//put inside #findRecipes function?
 function fridgeItemsHolder(fridgeListItems){
 var fooItems = document.getElementById('fridgeItems');
 var fooListItems = fooItems.getElementsByTagName('li');
@@ -77,13 +98,14 @@ var fridgeListItems = [];
 for(var i = 0 ; i<fooListItems.length; i++){
   fridgeListItems.push(fooListItems[i].innerHTML);
 }
+for(i=0; i<recipesArray.length; i++){
+if(recipesArray[i].includes(fridgeListItems)){
+  $('#results').append('<p>' +recipesArray[i]+ '</p>');
+}
+}
 console.log(fridgeListItems);
+
 return fridgeListItems;
-
-// if(recipes.contains(fridgeListItems)){
-//   $('#results').append('<p>' +recipes+ '</p>');
-// }
-
 
 
 }
@@ -97,5 +119,7 @@ return fridgeListItems;
       // console.log(ingredientsId);
       return fridgeItemsHolder();
   })
+
+})
 
 })
