@@ -8,20 +8,22 @@
   <body>
     <h1>What's in the Fridge?</h1>
     <div class="fridgeStuff">
+      <h4>Enter ingredients seperated by commas:</h4>
       <input type="text" name="fridgeIngredients" value="" id='fridgeIngredients' autofocus="" >
-      <button type="submit" name="button" id='ingredientSubmit' >Add</button>
-      <ul id='fridgeItems'>
-        <li>Cheese</li>
+      <button type="submit" name="button" id='ingredientSubmit'>Find Recipes</button>
+      <!-- <ul id='fridgeItems'>
+        <li>FooBar</li>
       </ul>
       <button type="submit" name="button" id='findRecipes'>Find Recipes</button>
-      <button type="submit" name="button" id='clearRecipes'>Clear List</button>
+      <button type="submit" name="button" id='clearRecipes'>Clear List</button> -->
     </div>
     <h2> Recipes </h2>
     <div class="recipes">
-      <div id="results">Results Go Here</div>
+      <div id="results"></div>
       <button type="submit" name="button" id='clearResults'>Clear Recipes</button>
     </div>
   </body>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/3.3.2/masonry.pkgd.min.js"></script>
   <script src="js/dom.js" charset="utf-8"></script>
 </html>

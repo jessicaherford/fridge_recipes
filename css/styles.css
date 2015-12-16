@@ -10,10 +10,11 @@ h1{
   width: 300px;
 }
 
-h2{
-  width: 100px;
+h4{
+  width: 400px;
   margin: 20px auto;
-  color: #E7F0FF;
+  color: #FFF;
+  text-align: center;
 
 }
 img{
@@ -31,11 +32,12 @@ input{
 }
 
 .fridgeStuff{
-  padding: 100px;
+  padding: 50px;
   margin: 50px auto;
   width: 400px;
-  background-color: lightblue;
+  /*background-color: lightblue;*/
   border-radius: 10px;
+  border: solid lightblue 2px;
 }
 
 #fridgeItems{
@@ -58,9 +60,48 @@ li{
 .recipes{
   text-align: center;
   margin: 10px auto;
-  width: 600px;
-  background-color: lightblue;
+  width: auto;
+  /*background-color: lightblue;*/
+  border: solid lightblue 2px;
   height: auto;
   border-radius: 10px;
-
+  color: #fff;
 }
+
+/*#recipeTitle{
+  width: auto;
+  font-size: 10px;
+  display: inline-block;
+  word-wrap: break-word;
+  height: auto;
+}*/
+
+/*Working on grid layout with Masonary*/
+#results {
+  margin: 20px;
+  /* Prevent vertical gaps */
+  line-height: 0;
+  -webkit-column-count: 5;
+  -webkit-column-gap:   0px;
+  -moz-column-count:    5;
+  -moz-column-gap:      0px;
+  column-count:         5;
+  column-gap:           0px;
+}
+
+#results p{
+  height: auto;
+  word-wrap: break-word;
+  width: 13em;
+  /*display: inline-block;*/
+}
+
+#results img {
+  /* Just in case there are inline attributes */
+  width: 100% !important;
+  height: auto !important;
+}
+/*
+.resultsDisplay{
+  display: inline-block;
+}*/

@@ -27,7 +27,13 @@ $(document).ready(function(){
 //   }
 //
 // console.log(albumsId);
-
+$('#fridgeIngredients').keypress(function(e){
+  if(e.which === 13){
+    $('#ingredientSubmit').click();
+    $('#fridgeIngredients').val('');
+    return false;
+  }
+})
 
 //Working Search Code
 $('#ingredientSubmit').click(function(){
@@ -41,23 +47,25 @@ $.ajax({
       dataType: 'json',
 }).done(function(response){
   console.log(response);
+  for( i=0; i<response.recipes.length; i++){
+  var recipes = response.recipes[i].title;
+  var image = response.recipes[i].image_url;
+  var imageLink = response.recipes[i].source_url;
+  $("#results").append('<p id="recipeTitle">'+recipes+ '</p>' + '<a href=" '+imageLink+'" >'  + '<img src=" '+image+' "/>' + '</a>');
+  $("#results").css('width', 'auto');
+  }
 })
 
 })
 
 
+$('#clearResults').click(function(){
+  $("#results").empty();
+})
 
 
 
 
-//
-//   $('#fridgeIngredients').keypress(function(e){
-//     if(e.which ===13){
-//       $('#ingredientSubmit').click();
-//       // $('#fridgeIngredients').val('');
-//       return false;
-//     }
-//   })
 //
 //   $('#clearRecipes').click(function(){
 //       $('li').remove();
