@@ -16,6 +16,10 @@ h2{
   color: #E7F0FF;
 
 }
+img{
+  height: 200px;
+  width: 200px;
+}
 
 input{
   margin-left: 15%;

@@ -2,15 +2,16 @@ $(document).ready(function(){
 
   // var ingredients = $('#fridgeIngredients').val()
 
-  $('#ingredientSubmit').click(function(){
-    var ingredients = $('#fridgeIngredients').val()
-    $('#fridgeItems').append('<li>' +ingredients+ '</li>');
-    $('#fridgeIngredients').val('');
-  })
-
-  $('#clearResults').click(function(){
-      $('p').remove();
-  })
+  // $('#ingredientSubmit').click(function(){
+  //   var ingredients = $('#fridgeIngredients').val()
+  //   $('#fridgeItems').append('<li>' +ingredients+ '</li>');
+  //   $('#fridgeIngredients').val('');
+  // })
+  //
+  // $('#clearResults').click(function(){
+  //     $('p').remove();
+  //     $('img').remove();
+  // })
   // var ingredientsId = ('#fridgeItems').length
   // console.log(ingredientsId);
   // for(var i = 0; i<ingredientsId; i++){
@@ -27,99 +28,139 @@ $(document).ready(function(){
 //
 // console.log(albumsId);
 
-  $('#fridgeIngredients').keypress(function(e){
-    if(e.which ===13){
-      $('#ingredientSubmit').click();
-      // $('#fridgeIngredients').val('');
-      return false;
-    }
-  })
 
-  $('#clearRecipes').click(function(){
-      $('li').remove();
-  })
+//Working Search Code
+$('#ingredientSubmit').click(function(){
 
-  var call = $.ajax({
-        url: "http://food2fork.com/api/search?key=c24b2377e69e34d6b450d0b43e35c9e0",
-        method: "GET",
-        dataType: 'json'
-});
+  var searchedValue = $('#fridgeIngredients').val();
 
-
-call.done(function(response){
-  //console.log(response)
-  //response is an object
-  var recipes = response.recipes[0].title;
-  var recipesArray = [];
-  for(i=0; i<response.recipes.length; i++){
-    var recipes = response.recipes[i].title;
-    //console.log(recipes);
-    recipesArray.push(recipes);
-    //$('#results').append('<p>' +recipes+ '</p>');
-  }
-  //console.log(recipesArray);
-
-  // for(i=0;i<recipesArray.length; i++){
-  //   if("recipesArray[i]:contains('Bacon')"){
-  //     $('#results').append('<p>' +recipesArray[i]+ '</p>');
-  //   }
-  // }
-
-  //added from fridgeItemsHolder() need to put inside
-  var fooItems = document.getElementById('fridgeItems');
-  var fooListItems = fooItems.getElementsByTagName('li');
-
-  var fridgeListItems = [];
-
-  for(var i = 0 ; i<fooListItems.length; i++){
-    fridgeListItems.push(fooListItems[i].innerHTML);
-  }
-  console.log(fridgeListItems);
-  console.log(recipesArray);
-  for(i=0; i<recipesArray.length; i++){
-  if(recipesArray[i].includes(fridgeListItems)){
-    $('#results').append('<p>' +recipesArray[i]+ '</p>');
-  }
-  //return recipesArray;
-
-  }
-
-//Have
-
-
-//grabs list element by name
-//put inside #findRecipes function?
-function fridgeItemsHolder(fridgeListItems){
-var fooItems = document.getElementById('fridgeItems');
-var fooListItems = fooItems.getElementsByTagName('li');
-
-var fridgeListItems = [];
-
-for(var i = 0 ; i<fooListItems.length; i++){
-  fridgeListItems.push(fooListItems[i].innerHTML);
-}
-for(i=0; i<recipesArray.length; i++){
-if(recipesArray[i].includes(fridgeListItems)){
-  $('#results').append('<p>' +recipesArray[i]+ '</p>');
-}
-}
-console.log(fridgeListItems);
-
-return fridgeListItems;
-
-
-}
-
-
-//looping through recipes object to see if stuff in fridge matches
- //Working on getting the results to append to the page
- //add things to the results area
-  $('#findRecipes').click(function(){
-      // var ingredientsId = ('#fridgeItems').length;
-      // console.log(ingredientsId);
-      return fridgeItemsHolder();
-  })
+$.ajax({
+      url: "http://food2fork.com/api/search?key=c24b2377e69e34d6b450d0b43e35c9e0",
+      method: "GET",
+      data: {q:searchedValue},
+      dataType: 'json',
+}).done(function(response){
+  console.log(response);
+})
 
 })
+
+
+
+
+
+
+//
+//   $('#fridgeIngredients').keypress(function(e){
+//     if(e.which ===13){
+//       $('#ingredientSubmit').click();
+//       // $('#fridgeIngredients').val('');
+//       return false;
+//     }
+//   })
+//
+//   $('#clearRecipes').click(function(){
+//       $('li').remove();
+//   })
+//
+//
+//   var call = $.ajax({
+//         url: "http://food2fork.com/api/search?key=c24b2377e69e34d6b450d0b43e35c9e0",
+//         method: "GET",
+//         dataType: 'json',
+//
+//
+// });
+//
+//
+//
+//
+// call.done(function(response){
+//   console.log(response)
+//   //response is an object
+//
+//   var recipes = response.recipes[0].title;
+//   var recipesArray = [];
+//   for(i=0; i<response.recipes.length; i++){
+//     var recipes = response.recipes[i].title;
+//     var pic = response.recipes[i].image_url;
+//     //console.log(recipes);
+//     recipesArray.push(recipes,pic);
+//     // recipesArray.push(pic);
+//     // $('#results').append('<p>' +recipes+ '</p>');
+//     // $('#results').append('<img src=" '+pic+' " />' );
+// //This part is working
+//   }
+//   console.log(recipesArray);
+//
+//
+//   //added from fridgeItemsHolder() need to put inside
+//   var fooItems = document.getElementById('fridgeItems');
+//   var fooListItems = fooItems.getElementsByTagName('li');
+//
+//   var fridgeListItems = [];
+//
+//   for(var i = 0 ; i<fooListItems.length; i++){
+//     fridgeListItems.push(fooListItems[i].innerHTML);
+//   }
+//   console.log(fridgeListItems);
+//
+// //trying to remove last item it appends
+//   for(i=0; i<recipesArray.length; i++){
+//   if(recipesArray[i].includes(fridgeListItems)){
+//     $('#results').append('<p>' +recipesArray[i]+ '</p>'+ '<img src=" '+recipesArray[i+1]+' "/>');
+//     // console.log(recipesArray[i+1]);
+//     // $('#results').append('<img src=" '+recipesArray[i+1] +' "/>' );
+//   }
+//   else{
+//
+//   }
+//   //return recipesArray;
+//
+//   }
+// //
+// //
+// //
+// // //grabs list element by name
+// // //put inside #findRecipes function?
+//
+// function fridgeItemsHolder(fridgeListItems){
+//
+//
+// var fooItems = document.getElementById('fridgeItems');
+// var fooListItems = fooItems.getElementsByTagName('li');
+//
+// var fridgeListItems = [];
+//
+// for(var i = 0 ; i<fooListItems.length; i++){
+//   fridgeListItems.push(fooListItems[i].innerHTML);
+// }
+// for(i=0; i<recipesArray.length; i++){
+//   // var pic = response.recipes[i].image_url;
+//   // console.log(pic);
+// if(recipesArray[i].includes(fridgeListItems)){
+//   $('#results').append('<p>' +recipesArray[i]+ '</p>');
+//   // $('#results').append('<img src=" '+recipesArray[i+1]+' "/>' );
+//
+// }
+// }
+// console.log(fridgeListItems);
+//
+// return fridgeListItems;
+//
+//
+// }
+// //
+// //
+// // //looping through recipes object to see if stuff in fridge matches
+// //  //Working on getting the results to append to the page
+// //  //add things to the results area
+//   $('#findRecipes').click(function(){
+//       // var ingredientsId = ('#fridgeItems').length;
+//       // console.log(ingredientsId);
+//       return fridgeItemsHolder();
+//   })
+//
+// })
 
 })
