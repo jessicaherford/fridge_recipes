@@ -51,13 +51,17 @@ $.ajax({
   var recipes = response.recipes[i].title;
   var image = response.recipes[i].image_url;
   var imageLink = response.recipes[i].source_url;
-  $("#results").append('<p id="recipeTitle">'+recipes+ '</p>' + '<a href=" '+imageLink+'" >'  + '<img src=" '+image+' "/>' + '</a>');
-  $("#results").css('width', 'auto');
+  // $("#results").append('<p id="recipeTitle">'+recipes+ '</p>' + '<a href=" '+imageLink+'" >'  + '<img src=" '+image+' "/>' + '</a>');
+  $("#results").append('<div id="recipeTitle">' + '<span id="recipe">' +recipes+ '</span>' + '<a href=" '+imageLink+'" >'  + '<img src=" '+image+' "/>' + '</a>' + '</div>' );
+  // $("#results").css('width', 'auto');
   }
 })
 
 })
 
+// $("#recipe").mouseenter(function(){
+//   $("#recipe").css('visibility', 'hidden');
+// })
 
 $('#clearResults').click(function(){
   $("#results").empty();

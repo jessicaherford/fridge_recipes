@@ -9,6 +9,11 @@ h1{
   margin: 100px auto;
   width: 300px;
 }
+h2{
+  color: #fff;
+  width: 100px;
+  margin: 10px auto;
+}
 
 h4{
   width: 400px;
@@ -20,6 +25,7 @@ h4{
 img{
   height: 200px;
   width: 200px;
+  margin: 0px auto;
 }
 
 input{
@@ -32,7 +38,7 @@ input{
 }
 
 .fridgeStuff{
-  padding: 50px;
+  padding: 20px;
   margin: 50px auto;
   width: 400px;
   /*background-color: lightblue;*/
@@ -76,31 +82,72 @@ li{
   height: auto;
 }*/
 
+#recipeTitle{
+  padding: 20px;
+  margin: 0 auto;
+  width: 200px;
+}
+
 /*Working on grid layout with Masonary*/
 #results {
   margin: 20px;
   /* Prevent vertical gaps */
-  line-height: 0;
+  /*line-height: 0;*/
   -webkit-column-count: 5;
   -webkit-column-gap:   0px;
   -moz-column-count:    5;
   -moz-column-gap:      0px;
   column-count:         5;
   column-gap:           0px;
+
+}
+#recipe{
+  margin: 0px auto;
+  width: auto;
 }
 
 #results p{
   height: auto;
-  word-wrap: break-word;
-  width: 13em;
-  /*display: inline-block;*/
+  color: #FFF;
 }
 
 #results img {
   /* Just in case there are inline attributes */
   width: 100% !important;
   height: auto !important;
+  border-radius: 10px;
+  margin: 10px auto;
 }
+
+@media (max-width: 1200px) {
+  #results {
+  -moz-column-count:    4;
+  -webkit-column-count: 4;
+  column-count:         4;
+  }
+}
+@media (max-width: 1000px) {
+  #results {
+  -moz-column-count:    3;
+  -webkit-column-count: 3;
+  column-count:         3;
+  }
+}
+@media (max-width: 800px) {
+  #results {
+  -moz-column-count:    2;
+  -webkit-column-count: 2;
+  column-count:         2;
+  }
+}
+@media (max-width: 400px) {
+  #results {
+  -moz-column-count:    1;
+  -webkit-column-count: 1;
+  column-count:         1;
+  }
+}
+
 /*
 .resultsDisplay{
   display: inline-block;
