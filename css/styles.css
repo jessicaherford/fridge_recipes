@@ -5,17 +5,19 @@ html{
 }
 
 header{
-  background-color:#323232;
+  background-color:#000;
   opacity: .9;
   width: 50%;
   margin: 40px auto;
   padding: 10px;
   border-radius: 10px;
+  margin-top: 250px;
 }
 p{
   color: white;
   text-align: center;
-  margin-top: 0px;
+  margin-top: 20px;
+  font-family: 'Imprima', sans-serif;
 }
 
 h1{
@@ -23,12 +25,14 @@ h1{
   margin: 10px auto;
   width: 310px;
   border-radius: 10px;
+  font-family: 'Catana One', serif;
 }
 
 h2{
   color: #fff;
   width: 100px;
   margin: 10px auto;
+  font-family: 'Catana One', serif;
 }
 
 h4{
@@ -43,6 +47,8 @@ h5{
   margin: 10px auto;
   color: #cc0000;
   width: 500px;
+  font-family: 'Catana One', serif;
+
 }
 
 hr{
@@ -56,8 +62,12 @@ img{
 }
 
 input{
+  outline-width: 0;
   margin-left: 15%;
   width: 260px;
+  /*border-radius: 5px;*/
+  border: solid 1px #707070;
+  box-shadow: 0 0 5px 1px #969696;
 }
 
 #fridgeIngredients{
@@ -107,6 +117,7 @@ li{
   height: auto;
   color: #fff;
   border-radius: 10px;
+  visibility: hidden;
 }
 
 /*#recipeTitle{
@@ -151,6 +162,7 @@ li{
 #recipe{
   margin: 10px auto;
   width: auto;
+  font-family: 'Imprima', sans-serif;
 }
 
 #results p{
@@ -167,6 +179,10 @@ button{
   color: white;
   background: #000;
   border: solid 2px white;
+  border-radius: 5px;
+  font-family: 'Catana One', serif;
+  letter-spacing: 1.5px;
+
 }
 
 #results img {

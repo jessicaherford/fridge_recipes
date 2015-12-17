@@ -59,8 +59,9 @@ $.ajax({
   var image = response.recipes[i].image_url;
   var imageLink = response.recipes[i].source_url;
   $("#results").append('<div id="recipeTitle" class="animated slideInUp">' + '<span id="recipe">' +recipes+ '</span>' + '<a target="_blank" href=" '+imageLink+'" >'  + '<img src=" '+image+' "/>' + '</a>' + '</div>' );
-  // $('#results').addClass('animated slideInUp');
   $("#clearResults").css('visibility', 'visible');
+  $(".recipes").css('visibility', 'visible');
+  $("header").animate({'margin-top':'45px'}, 1000);
   }
 
 })
