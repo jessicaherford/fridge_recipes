@@ -30,22 +30,20 @@ $(document).ready(function(){
 $('#fridgeIngredients').keypress(function(e){
   if(e.which === 13){
     $('#ingredientSubmit').click();
-    ('#fridgeIngredients').val('');
+    $('#fridgeIngredients').val('');
     return false;
   }
 })
 
 //Working Search Code
 $('#ingredientSubmit').click(function(){
-
-  // if(('#fridgeIngredients').val() === ' '){
-  //
-  // }
-
+  $('#results').empty();
   var searchedValue = $('#fridgeIngredients').val();
   if(searchedValue === ''){
     $('h2').replaceWith("<h5>Top Trending Recipes</h5>");
     $("h1").css('color', '#fff');
+  }
+  else{
 
   }
 
@@ -60,10 +58,11 @@ $.ajax({
   var recipes = response.recipes[i].title;
   var image = response.recipes[i].image_url;
   var imageLink = response.recipes[i].source_url;
-  // $("#results").append('<p id="recipeTitle">'+recipes+ '</p>' + '<a href=" '+imageLink+'" >'  + '<img src=" '+image+' "/>' + '</a>');
-  $("#results").append('<div id="recipeTitle">' + '<span id="recipe">' +recipes+ '</span>' + '<a target="_blank" href=" '+imageLink+'" >'  + '<img src=" '+image+' "/>' + '</a>' + '</div>' );
+  $("#results").append('<div id="recipeTitle" class="animated slideInUp">' + '<span id="recipe">' +recipes+ '</span>' + '<a target="_blank" href=" '+imageLink+'" >'  + '<img src=" '+image+' "/>' + '</a>' + '</div>' );
+  // $('#results').addClass('animated slideInUp');
   $("#clearResults").css('visibility', 'visible');
   }
+
 })
 
 })
