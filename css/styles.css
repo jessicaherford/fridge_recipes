@@ -1,14 +1,15 @@
 html{
   background-color: #000;
-
 }
 
 
 h1{
-  color: #E7F0FF;
-  margin: 100px auto;
-  width: 300px;
+  color: #cc0000;
+  margin: 50px auto;
+  width: 310px;
+  border-radius: 10px;
 }
+
 h2{
   color: #fff;
   width: 100px;
@@ -20,7 +21,16 @@ h4{
   margin: 20px auto;
   color: #FFF;
   text-align: center;
+}
 
+h5{
+  font-size: 50px;
+  margin: 10px auto;
+  color: #cc0000;
+  width: 500px;
+}
+hr{
+  width: 50%;
 }
 img{
   height: 200px;
@@ -30,20 +40,23 @@ img{
 
 input{
   margin-left: 15%;
-  width: 200px;
+  width: 260px;
 }
 
 #ingredientSubmit{
-  margin-left: 10px;
+  margin-top: 40px;
+  margin-left: 35%;
+  width: 100px;
 }
 
 .fridgeStuff{
   padding: 20px;
   margin: 50px auto;
   width: 400px;
+  height: auto;
   /*background-color: lightblue;*/
   border-radius: 10px;
-  border: solid lightblue 2px;
+  /*border: solid lightblue 2px;*/
 }
 
 #fridgeItems{
@@ -68,9 +81,8 @@ li{
   margin: 10px auto;
   width: auto;
   /*background-color: lightblue;*/
-  border: solid lightblue 2px;
+  /*border: solid lightblue 2px;*/
   height: auto;
-  border-radius: 10px;
   color: #fff;
 }
 
@@ -86,10 +98,20 @@ li{
   padding: 20px;
   margin: 0 auto;
   width: 200px;
+  position: relative;
+  display: inline-block;
 }
 
+#recipeTitle:hover{
+  background-color: #323232;
+  border-radius: 10px;
+  /*border: double 1px #464646;*/
+  box-shadow: inset 0 0 10px #000000;
+
+}
 /*Working on grid layout with Masonary*/
 #results {
+  height: auto;
   margin: 20px;
   /* Prevent vertical gaps */
   /*line-height: 0;*/
@@ -109,6 +131,17 @@ li{
 #results p{
   height: auto;
   color: #FFF;
+}
+
+#clearResults{
+  margin-bottom: 20px;
+  visibility: hidden;
+}
+
+button{
+  color: white;
+  background: #000;
+  border: solid 2px white;
 }
 
 #results img {

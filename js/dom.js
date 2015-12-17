@@ -30,7 +30,7 @@ $(document).ready(function(){
 $('#fridgeIngredients').keypress(function(e){
   if(e.which === 13){
     $('#ingredientSubmit').click();
-    $('#fridgeIngredients').val('');
+    ('#fridgeIngredients').val('');
     return false;
   }
 })
@@ -38,7 +38,16 @@ $('#fridgeIngredients').keypress(function(e){
 //Working Search Code
 $('#ingredientSubmit').click(function(){
 
+  // if(('#fridgeIngredients').val() === ' '){
+  //
+  // }
+
   var searchedValue = $('#fridgeIngredients').val();
+  if(searchedValue === ''){
+    $('h2').replaceWith("<h5>Top Trending Recipes</h5>");
+    $("h1").css('color', '#fff');
+
+  }
 
 $.ajax({
       url: "http://food2fork.com/api/search?key=c24b2377e69e34d6b450d0b43e35c9e0",
@@ -52,8 +61,8 @@ $.ajax({
   var image = response.recipes[i].image_url;
   var imageLink = response.recipes[i].source_url;
   // $("#results").append('<p id="recipeTitle">'+recipes+ '</p>' + '<a href=" '+imageLink+'" >'  + '<img src=" '+image+' "/>' + '</a>');
-  $("#results").append('<div id="recipeTitle">' + '<span id="recipe">' +recipes+ '</span>' + '<a href=" '+imageLink+'" >'  + '<img src=" '+image+' "/>' + '</a>' + '</div>' );
-  // $("#results").css('width', 'auto');
+  $("#results").append('<div id="recipeTitle">' + '<span id="recipe">' +recipes+ '</span>' + '<a target="_blank" href=" '+imageLink+'" >'  + '<img src=" '+image+' "/>' + '</a>' + '</div>' );
+  $("#clearResults").css('visibility', 'visible');
   }
 })
 
