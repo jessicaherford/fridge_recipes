@@ -1,11 +1,10 @@
-html{
+html {
   /*background-color: #000000;*/
   background-image: url("../images/kitchen_background.jpg");
   background-position: center;
 }
-
-header{
-  background-color:#000;
+header {
+  background-color: #000;
   opacity: .9;
   width: 50%;
   margin: 40px auto;
@@ -13,55 +12,48 @@ header{
   border-radius: 10px;
   margin-top: 250px;
 }
-p{
+p {
   color: white;
   text-align: center;
   margin-top: 20px;
   font-family: 'Imprima', sans-serif;
 }
-
-h1{
+h1 {
   color: #fff;
   margin: 10px auto;
   width: 310px;
   border-radius: 10px;
   font-family: 'Catana One', serif;
 }
-
-h2{
+h2 {
   color: #fff;
   width: 100px;
   margin: 10px auto;
   font-family: 'Catana One', serif;
 }
-
-h4{
+h4 {
   width: 400px;
   margin: 20px auto;
   color: #FFF;
   text-align: center;
 }
-
-h5{
+h5 {
   font-size: 50px;
   margin: 10px auto;
   color: #cc0000;
   width: 500px;
   font-family: 'Catana One', serif;
-
 }
-
-hr{
+hr {
   width: 50%;
   background-color: #4c0000;
 }
-img{
+img {
   height: 200px;
   width: 200px;
   margin: 0px auto;
 }
-
-input{
+input {
   outline-width: 0;
   margin-left: 15%;
   width: 270px;
@@ -72,18 +64,15 @@ input{
   height: 36px;
   font-size: 16px;
 }
-
-#fridgeIngredients{
+#fridgeIngredients {
   text-align: center;
 }
-
-#ingredientSubmit{
+#ingredientSubmit {
   margin-top: 20px;
   width: 100px;
   margin-left: 37%;
 }
-
-.fridgeStuff{
+.fridgeStuff {
   padding: 20px;
   margin: 50px auto;
   width: 400px;
@@ -92,22 +81,16 @@ input{
   border-radius: 10px;
   /*border: solid lightblue 2px;*/
 }
-
-#fridgeItems{
+#fridgeItems {
   margin-left: 20px;
 }
-
-
-#findRecipes{
+#findRecipes {
   margin-left: 25%;
 }
-
-a{
+a {
   color: #fff;
 }
-
-
-.recipes{
+.recipes {
   padding-top: 20px;
   text-align: center;
   margin: 10px auto;
@@ -118,8 +101,7 @@ a{
   color: #fff;
   visibility: hidden;
 }
-
-.recipes::after{
+.recipes::after {
   content: '';
   position: absolute;
   top: 0;
@@ -140,7 +122,7 @@ a{
   height: auto;
 }*/
 
-#recipeTitle{
+#recipeTitle {
   padding: 20px;
   margin: 0 auto;
   width: 200px;
@@ -149,8 +131,7 @@ a{
   display: inline-block;
   animation-duration: 4s;
 }
-
-#recipeTitle:hover{
+#recipeTitle:hover {
   padding: 20px;
   background-color: #323232;
   border-radius: 10px;
@@ -158,7 +139,9 @@ a{
   box-shadow: inset 0 0 10px #000000;
   color: orange;
 }
+
 /*Working on grid layout with Masonary*/
+
 #results {
   height: auto;
   width: auto;
@@ -166,30 +149,26 @@ a{
   /* Prevent vertical gaps */
   /*line-height: 0;*/
   -webkit-column-count: 5;
-  -webkit-column-gap:   0px;
-  -moz-column-count:    5;
-  -moz-column-gap:      0px;
-  column-count:         5;
-  column-gap:           0px;
-
+  -webkit-column-gap: 0px;
+  -moz-column-count: 5;
+  -moz-column-gap: 0px;
+  column-count: 5;
+  column-gap: 0px;
 }
-#recipe{
+#recipe {
   margin: 10px auto;
   width: auto;
   font-family: 'Imprima', sans-serif;
 }
-
-#results p{
+#results p {
   height: auto;
   color: #FFF;
 }
-
-#clearResults{
+#clearResults {
   margin-bottom: 20px;
   visibility: hidden;
 }
-
-button{
+button {
   color: white;
   background: #000;
   border: solid 2px white;
@@ -197,14 +176,11 @@ button{
   font-family: 'Catana One', serif;
   letter-spacing: 1.5px;
   height: 30px;
-
 }
-
-.buttonHolder{
+.buttonHolder {
   width: auto;
   margin: 10px auto;
 }
-
 #results img {
   /* Just in case there are inline attributes */
   width: 100% !important;
@@ -212,36 +188,34 @@ button{
   border-radius: 10px;
   margin: 10px auto;
 }
-
 @media (max-width: 1200px) {
   #results {
-  -moz-column-count:    4;
-  -webkit-column-count: 4;
-  column-count:         4;
+    -moz-column-count: 4;
+    -webkit-column-count: 4;
+    column-count: 4;
   }
 }
 @media (max-width: 1000px) {
   #results {
-  -moz-column-count:    3;
-  -webkit-column-count: 3;
-  column-count:         3;
+    -moz-column-count: 3;
+    -webkit-column-count: 3;
+    column-count: 3;
   }
 }
 @media (max-width: 800px) {
   #results {
-  -moz-column-count:    2;
-  -webkit-column-count: 2;
-  column-count:         2;
+    -moz-column-count: 2;
+    -webkit-column-count: 2;
+    column-count: 2;
   }
 }
 @media (max-width: 400px) {
   #results {
-  -moz-column-count:    1;
-  -webkit-column-count: 1;
-  column-count:         1;
+    -moz-column-count: 1;
+    -webkit-column-count: 1;
+    column-count: 1;
   }
 }
-
 
 /*
 .resultsDisplay{

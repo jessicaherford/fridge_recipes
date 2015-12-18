@@ -20,16 +20,6 @@ $('#ingredientSubmit').click(function(){
 
   }
 
-
-// var dataStorage = document.getElementById("userName");
-//
-// dataStorage.addEventListener('click', function(){
-//   var userNameName = document.getElementById("userName").val();
-//   console.log(userNameName);
-// })
-
-
-
 $.ajax({
       url: "http://food2fork.com/api/search?key=c24b2377e69e34d6b450d0b43e35c9e0",
       method: "GET",
