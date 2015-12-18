@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Fridge Recipes</title>
+    <link rel="stylesheet" href="css/styles.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="css/animate.css">
+    <link href='https://fonts.googleapis.com/css?family=Cantata+One' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Imprima' rel='stylesheet' type='text/css'>
+  </head>
+  <body>
+    <header>
+    <h1 class ='animated slideInRight'>What's in the Fridge?</h1>
+    <hr>
+    <p class = 'animated slideInLeft'>Find Recipes based off of ingredients you already have!</p>
+    <!-- <button type="submit" name="button" id='topRecipes'>See Top Recipes</button> -->
+
+    </header>
+    <div class="fridgeStuff">
+
+      <!-- LocalStorage Stuff -->
+      <!-- <input type="text" id="username" name='username'> -->
+      <input type="text" spellcheck="true" name="fridgeIngredients" value="" placeholder="Enter ingredients seperated by commas:" id='fridgeIngredients' autofocus="">
+      <div class = 'buttonHolder'>
+      <button type="submit" name="button" id='ingredientSubmit'>Find Recipes</button>
+      </div>
+    </div>
+    <div class="recipes">
+      <h2> Recipes </h2>
+
+      <div id="results"></div>
+      <button type="submit" name="button" id='clearResults'>Clear Recipes</button>
+    </div>
+  </body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/3.3.2/masonry.pkgd.min.js"></script>
+  <script src="js/dom.js" charset="utf-8"></script>
+  <script src="js/logic.js" charset="utf-8"></script>
+</html>

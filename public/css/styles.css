@@ -1,0 +1,249 @@
+html{
+  /*background-color: #000000;*/
+  background-image: url("../images/kitchen_background.jpg");
+  background-position: center;
+}
+
+header{
+  background-color:#000;
+  opacity: .9;
+  width: 50%;
+  margin: 40px auto;
+  padding: 40px;
+  border-radius: 10px;
+  margin-top: 250px;
+}
+p{
+  color: white;
+  text-align: center;
+  margin-top: 20px;
+  font-family: 'Imprima', sans-serif;
+}
+
+h1{
+  color: #fff;
+  margin: 10px auto;
+  width: 310px;
+  border-radius: 10px;
+  font-family: 'Catana One', serif;
+}
+
+h2{
+  color: #fff;
+  width: 100px;
+  margin: 10px auto;
+  font-family: 'Catana One', serif;
+}
+
+h4{
+  width: 400px;
+  margin: 20px auto;
+  color: #FFF;
+  text-align: center;
+}
+
+h5{
+  font-size: 50px;
+  margin: 10px auto;
+  color: #cc0000;
+  width: 500px;
+  font-family: 'Catana One', serif;
+
+}
+
+hr{
+  width: 50%;
+  background-color: #4c0000;
+}
+img{
+  height: 200px;
+  width: 200px;
+  margin: 0px auto;
+}
+
+input{
+  outline-width: 0;
+  margin-left: 15%;
+  width: 270px;
+  /*border-radius: 5px;*/
+  border: solid 1px #707070;
+  box-shadow: 0 0 5px 1px #969696;
+  font-family: 'Catana One', serif;
+  height: 36px;
+  font-size: 16px;
+}
+
+#fridgeIngredients{
+  text-align: center;
+}
+
+#ingredientSubmit{
+  margin-top: 20px;
+  width: 100px;
+  margin-left: 37%;
+}
+
+.fridgeStuff{
+  padding: 20px;
+  margin: 50px auto;
+  width: 400px;
+  height: auto;
+  /*background-color: lightblue;*/
+  border-radius: 10px;
+  /*border: solid lightblue 2px;*/
+}
+
+#fridgeItems{
+  margin-left: 20px;
+}
+
+
+#findRecipes{
+  margin-left: 25%;
+}
+
+a{
+  color: #fff;
+}
+
+
+.recipes{
+  padding-top: 20px;
+  text-align: center;
+  margin: 10px auto;
+  width: 90%;
+  position: relative;
+  /*border: solid lightblue 2px;*/
+  height: auto;
+  color: #fff;
+  visibility: hidden;
+}
+
+.recipes::after{
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #000;
+  border-radius: 10px;
+  opacity: 0.9;
+  z-index: -1;
+}
+
+/*#recipeTitle{
+  width: auto;
+  font-size: 10px;
+  display: inline-block;
+  word-wrap: break-word;
+  height: auto;
+}*/
+
+#recipeTitle{
+  padding: 20px;
+  margin: 0 auto;
+  width: 200px;
+  border-radius: 10px;
+  position: relative;
+  display: inline-block;
+  animation-duration: 4s;
+}
+
+#recipeTitle:hover{
+  padding: 20px;
+  background-color: #323232;
+  border-radius: 10px;
+  /*border: double 1px #464646;*/
+  box-shadow: inset 0 0 10px #000000;
+  color: orange;
+}
+/*Working on grid layout with Masonary*/
+#results {
+  height: auto;
+  width: auto;
+  margin: 20px;
+  /* Prevent vertical gaps */
+  /*line-height: 0;*/
+  -webkit-column-count: 5;
+  -webkit-column-gap:   0px;
+  -moz-column-count:    5;
+  -moz-column-gap:      0px;
+  column-count:         5;
+  column-gap:           0px;
+
+}
+#recipe{
+  margin: 10px auto;
+  width: auto;
+  font-family: 'Imprima', sans-serif;
+}
+
+#results p{
+  height: auto;
+  color: #FFF;
+}
+
+#clearResults{
+  margin-bottom: 20px;
+  visibility: hidden;
+}
+
+button{
+  color: white;
+  background: #000;
+  border: solid 2px white;
+  border-radius: 5px;
+  font-family: 'Catana One', serif;
+  letter-spacing: 1.5px;
+  height: 30px;
+
+}
+
+.buttonHolder{
+  width: auto;
+  margin: 10px auto;
+}
+
+#results img {
+  /* Just in case there are inline attributes */
+  width: 100% !important;
+  height: auto !important;
+  border-radius: 10px;
+  margin: 10px auto;
+}
+
+@media (max-width: 1200px) {
+  #results {
+  -moz-column-count:    4;
+  -webkit-column-count: 4;
+  column-count:         4;
+  }
+}
+@media (max-width: 1000px) {
+  #results {
+  -moz-column-count:    3;
+  -webkit-column-count: 3;
+  column-count:         3;
+  }
+}
+@media (max-width: 800px) {
+  #results {
+  -moz-column-count:    2;
+  -webkit-column-count: 2;
+  column-count:         2;
+  }
+}
+@media (max-width: 400px) {
+  #results {
+  -moz-column-count:    1;
+  -webkit-column-count: 1;
+  column-count:         1;
+  }
+}
+
+
+/*
+.resultsDisplay{
+  display: inline-block;
+}*/
