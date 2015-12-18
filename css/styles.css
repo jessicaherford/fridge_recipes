@@ -8,11 +8,12 @@ header{
   background-color:#000;
   opacity: .9;
   width: 50%;
-  margin: 40px auto;
-  padding: 40px;
+  margin: 40% auto;
+  padding: 40%;
   border-radius: 10px;
   margin-top: 250px;
 }
+
 p{
   color: white;
   text-align: center;
@@ -22,10 +23,11 @@ p{
 
 h1{
   color: #fff;
-  margin: 10px auto;
-  width: 310px;
+  width: 50%;
+  margin: 10% auto;
   border-radius: 10px;
   font-family: 'Catana One', serif;
+  word-wrap: break-word;
 }
 
 h2{
@@ -118,7 +120,10 @@ a{
   color: #fff;
   border-radius: 10px;
   visibility: hidden;
+  opacity: 0.5;
 }
+
+
 
 /*#recipeTitle{
   width: auto;
